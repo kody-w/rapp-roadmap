@@ -193,5 +193,47 @@
     "Ecosystem-coherence drift at scale \u2014 33 protocols across 6 layers already require active drift sweeps; as the platform federates across orgs, incoherence becomes a product-quality and trust risk. The coherence tooling (spine / ecosystem-sync / neuron-mesh) must itself be productized as governance, not run as ad-hoc maintenance.",
     "Allowlist theater \u2014 if RemoteControl or any shell/exec agent ever sits in the DEFAULT allowlist, the Phase 1 gate is cosmetic. Default-deny with shell agents OUT must be enforced and tested, not assumed.",
     "Moving target \u2014 Agent 365's Entra Agent ID, registry, and Purview/Defender hooks are still evolving; keep the integration spec-driven via rapp-spine so RAPP tracks the plane instead of hard-coding against a snapshot, and resist leading with cross-tenant federation (18mo+) before single-operator governance is proven."
-  ]
+  ],
+  "architecture": {
+    "the_atom": "the brainstem (rapp-agent/1.0) \u2014 the locked kernel; everything composes from it",
+    "foundation_registry": "https://raw.githubusercontent.com/kody-w/rapp-spine/main/foundation.json",
+    "doctrine": "https://raw.githubusercontent.com/kody-w/rapp-spine/main/FOUNDATION.md",
+    "pillars": [
+      {
+        "pillar": "fleet",
+        "spec": "leviathan/1.0",
+        "repo": "kody-w/leviathan",
+        "status": "live, unified"
+      },
+      {
+        "pillar": "being",
+        "spec": "rapp-leviathan-egg/1.0",
+        "repo": "kody-w/rapp-leviathan-hub",
+        "status": "live, unified"
+      },
+      {
+        "pillar": "planet",
+        "spec": "rapp-frame/1.0",
+        "repo": "kody-w/rapp-frame-net",
+        "status": "live; POC proven (edge local-judgment + append-only event loop)"
+      },
+      {
+        "pillar": "survival",
+        "spec": "rapp-hydra/1.0",
+        "repo": "kody-w/rapp-frame-net",
+        "status": "live; proven on 3 independent CDN heads"
+      },
+      {
+        "pillar": "router",
+        "spec": "rapp-spine/1.0",
+        "repo": "kody-w/rapp-spine",
+        "status": "live; locks the foundation + routes situations"
+      }
+    ],
+    "proven_live": [
+      "an edge brainstem made a stale-guidance-safe LOCAL judgment off a frame (reversible mitigation, refused irreversible deletion, flagged the conflict)",
+      "the full event-sourced loop closed over GitHub: telemetry -> append-only event -> frame loop forges echo -> materialized view -> edge re-aims (idempotent, no API we don't own on the read path)",
+      "the hydra served the same content-hash from raw.githubusercontent.com, jsDelivr, and raw.githack"
+    ]
+  }
 }

@@ -185,3 +185,24 @@ The new medium is capability itself made into a portable, signed, content-addres
 ---
 
 *One brainstem on a laptop → a planetary swarm of Leviathans enhancing every Agent 365 workflow. The kernel never changes; the capability rides one wire.*
+
+## The architecture, locked (and proven live)
+
+The brainstem is the **atom**; the kernel is **locked**; every spec has a globally-public **canonical twin** (content-addressed in [`foundation.json`](https://github.com/kody-w/rapp-spine/blob/main/foundation.json)); and the whole medium rides the **hydra** (many heads, unkillable). The pillars:
+
+| pillar | spec | repo | status |
+|---|---|---|---|
+| **fleet** | `leviathan/1.0` | kody-w/leviathan | live, unified |
+| **being** | `rapp-leviathan-egg/1.0` | kody-w/rapp-leviathan-hub | live, unified |
+| **planet** | `rapp-frame/1.0` | kody-w/rapp-frame-net | live; POC proven (edge local-judgment + append-only event loop) |
+| **survival** | `rapp-hydra/1.0` | kody-w/rapp-frame-net | live; proven on 3 independent CDN heads |
+| **router** | `rapp-spine/1.0` | kody-w/rapp-spine | live; locks the foundation + routes situations |
+
+**Proven live, on real infrastructure (not slideware):**
+
+- an edge brainstem made a stale-guidance-safe LOCAL judgment off a frame (reversible mitigation, refused irreversible deletion, flagged the conflict)
+- the full event-sourced loop closed over GitHub: telemetry -> append-only event -> frame loop forges echo -> materialized view -> edge re-aims (idempotent, no API we don't own on the read path)
+- the hydra served the same content-hash from raw.githubusercontent.com, jsDelivr, and raw.githack
+
+The kernel never changed — every pillar is agents/cartridges/profiles on the wire. An edge is a full brainstem, so **every hero use case works at the edge, unchanged**, even on a spotty link, even offline.
+
