@@ -38,3 +38,12 @@ Today the Leviathan fleet wire (`POST /api/agent/<name>`) is **unauthenticated**
 ---
 
 *The hero use cases are the guiding lights — the Leviathan controller, the Foundry, the Hatchery, the MCP on-ramp, CopilotCLI delegation, portable eggs, doc2cs, the Flight Recorder. Each one is a today, and a productized tomorrow. See [ROADMAP.md](ROADMAP.md#hero-use-cases--the-guiding-lights).*
+
+## The adversarial backlog
+
+Before bringing this to anyone, we threw the whole architecture into an 8-lens red-team gauntlet
++ a completeness critic — **165 wrenches** banked with pre-thought mitigations, so when reality
+throws one, the answer's already here. See **[BACKLOG.md](BACKLOG.md)** (`60 P0 · 76 P1 · 28 P2`)
+and machine-readable [`backlog.json`](backlog.json). It does not block the build; it's the
+long-term hardening bank. The five real pressure points (kernel-freeze-vs-CVE, offline-LLM,
+enterprise-vs-public-telemetry, single-vendor-capture, supply-chain) are all on the roadmap.
