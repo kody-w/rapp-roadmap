@@ -235,5 +235,9 @@
       "the full event-sourced loop closed over GitHub: telemetry -> append-only event -> frame loop forges echo -> materialized view -> edge re-aims (idempotent, no API we don't own on the read path)",
       "the hydra served the same content-hash from raw.githubusercontent.com, jsDelivr, and raw.githack"
     ]
+  },
+  "status": {
+    "phase": "experimental",
+    "posture": "Run on a trusted/secure network. The fleet-wire auth that closes the present-day RCE is Phase 1 (signed, default-deny, mTLS/Entra) \u2014 a hard gate before any untrusted-network or enterprise-pilot use, but it does NOT block experimentation on a secure network. Tracked: backlog P0 + Phase 1."
   }
 }
