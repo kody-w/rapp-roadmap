@@ -1,104 +1,64 @@
 {
-  "north_star": "Turn every idle GitHub Copilot seat into a one-minute, no-API-key on-ramp that grows \u2014 by the user's own choice \u2014 from one brainstem on a laptop into a planetary swarm of governed Leviathans enhancing every Microsoft Agent 365 workflow, while the sacred single-file kernel never changes.",
-  "the_medium": "The new medium is capability itself made into a portable, signed, content-addressed object \u2014 the cartridge and the egg \u2014 that rides ONE wire (POST /chat, or a signed append-only event), needs no API keys, no procurement, and no engine changes to run. What HTML did for documents, the cartridge/egg does for agent capability: an AI workflow born on a laptop in under a minute becomes a forkable, deterministically-verified artifact the Foundry can push fleet-wide in seconds, an egg can carry to another operator with one command, and that promotes intact up the tiers into Copilot Studio. Composed, these objects form a Leviathan \u2014 a fleet of agent-beings driven as ONE mind: 0.2s heterogeneous fan-out, no shared-token throttle, alive even when a node's own LLM is dead. The medium is \"fleet-of-beings-as-one-mind\": the unit is capability-as-an-object, the organism is the swarm, and the whole thing is an enhancement layer Agent 365 governs \u2014 never a fork of Microsoft's stack.",
+  "north_star": "Use everyone else's hardware to run the network (MASTER_PLAN \u00a75). Operators run brainstems on their own machines and subscribe to many NEIGHBORHOODS; the union is their ESTATE; estates mesh into a self-building METROPOLIS. This roadmap builds toward that metropolis WITHOUT ever unlocking the single-file kernel. Agent 365 is an OPTIONAL commercial on-ramp lane (Tier 3), not the destination.",
+  "the_medium": "Capability as a portable, signed, content-addressed object \u2014 the cartridge (agent.py) and the egg \u2014 that rides one wire (POST /chat, or a signed append-only event), needs no API keys or engine changes to run, and degrades gracefully offline (the Charizard hero floor). Composed across scales via the rapp-egg/2.0 `scale` field (agent/twin/brainstem/neighborhood/swarm/factory/industry/estate), these objects build the metropolis bottom-up.",
   "phases": [
     {
-      "name": "Phase 0 \u2014 Lock the kernel, light the funnel, name the on-ramp",
+      "n": 0,
+      "title": "Lock the kernel for real",
       "horizon": "now",
-      "theme": "Make 'kernel sacred' a testable invariant, make the free first-run measurable, and pin the Agent 365 positioning to numbers \u2014 before scaling spend or writing integration code.",
-      "objectives": [
-        "Freeze the rapp-agent/1.0 contract as a green CI invariant so all later maturation provably stays out of the kernel.",
-        "Make the existing one-liner install the most reliable, measurable first-run in the category and instrument the North-Star activation funnel.",
-        "Lock the 'enhance Agent 365, never replace' framing as a one-sentence thesis a Microsoft PM can repeat, with every RAPP mechanism mapped to an Agent 365 KPI.",
-        "Neutralize the standing liability: mark the unauthenticated swarm/shell/relay cartridges GATED and default-OFF until Phase 1 lands."
-      ],
-      "milestones": [
-        "Kernel-conformance harness in CI: assert the only wires are POST /chat (tool-loop, MAX_ROUNDS) and agent-injected direct routes; freeze the BasicAgent.metadata + perform(**kwargs)->str ABI; assert no capability requires a new core symbol; assert brainstem.py (T1) and function_app.py (T2) behave identically (parity gate).",
-        "Pinned-version installs (BRAINSTEM_VERSION=X.Y.Z), fresh-machine end-to-end install test gate, immutable brainstem-vX.Y.Z rollback tags surfaced to users.",
-        "Opt-in, privacy-clean activation telemetry in an ACCESSORY repo (never the kernel): time-to-first-agent and time-to-first-fan-out.",
-        "Canonical 5-minute hero demo recorded and embedded on the landing page: Leviathan controller doing 0.2s heterogeneous fan-out across 3 bodies, no API keys.",
-        "Blast-radius classification of swarm cartridges (flock_endpoint = direct exec, remote_control = arbitrary shell, brainstem_relay = lateral) \u2014 all three marked default-OFF.",
-        "Adoption-gap one-pager + tier->plane->KPI metric map + explicit non-goals slide (not a competing builder, not a competing plane, not a Copilot replacement)."
-      ],
-      "hero_use_case": "The Leviathan controller demo \u2014 one mind, 0.2s heterogeneous fan-out across three no-LLM bodies, no API keys \u2014 recorded as the canonical 5-minute hero.",
-      "exit_criteria": "The kernel contract is a passing CI invariant (incl. stem/function_app parity); the one-liner has a measured time-to-first-agent funnel on a fresh machine; the unauth fleet/shell/relay cartridges are default-OFF; the Agent 365 metric map compresses to a single repeatable sentence."
+      "theme": "Make 'kernel sacred' true and testable before building on it.",
+      "items": [
+        "Heal the kernel-home split-brain: declare ONE grail of record between rapp-installer and kody-w/RAPP for brainstem.py/VERSION/CONSTITUTION (rapp-god shows 12 active drifts).",
+        "Collapse the 3 divergent Constitution copies and reconcile the version axes (CLAUDE.md 0.4.0 vs ledger 0.6.0 vs live 0.6.1).",
+        "Make kernel-freeze a CI invariant (byte-identity check), not discipline-only.",
+        "Fix the rapp-frame/1.0 schema-id collision: rename the swarm wire, or bump to rapp-frame/2.0 unifying the Dream-Catcher memory-frame + swarm-wire as one family (Constitution amendment).",
+        "Keep rappid eternity AS-IS (sha256 identity, keypair OPTIONAL); scope any PKI cleanup to mandatory-keypair spots only."
+      ]
     },
     {
-      "name": "Phase 1 \u2014 Close the RCE, make the fleet sellable",
-      "horizon": "0-3mo",
-      "theme": "The gating blocker. The unauthenticated POST /api/agent/<name> wire and the shell/relay agents behind it become authenticated, default-deny, per-agent allowlisted, and audited \u2014 entirely as a cartridge + spine profile, zero kernel edits, identical in T1/T2 \u2014 and the proven controller + Foundry become a turnkey product a second person can stand up safely.",
-      "objectives": [
-        "Eliminate fleet-wide RCE: no path reaches an agent's perform() without passing a signed, allowlisted, recorded gate.",
-        "Turn the Leviathan controller + Foundry from a demo into something a second operator can stand up governably in minutes.",
-        "Define and validate the paid surface (Free / Fleet-Pro / Enterprise) with real design partners before scaling GTM."
-      ],
-      "milestones": [
-        "Signed-flock cartridge: HMAC shared-secret bearer (BRAINSTEM_FLOCK_SECRET) + nonce/timestamp replay window on POST /api/agent/<name> and on BrainstemRelay /chat relays; reject unsigned/expired; token slot designed to accept Entra Agent ID claims later.",
-        "Per-agent allowlist, DEFAULT DENY: RemoteControl and every shell/exec agent OUT of the default \u2014 enforced and tested so it is real, not theater; every gated call and denial recorded append-only by the flight recorder (caller-attributed).",
-        "Optional mTLS profile for any cross-host/off-LAN hop; documented that shared-secret is LAN-tier and mTLS/Entra is the enterprise path.",
-        "New spine 'fleet-auth' protocol/profile (a profile on the existing wire, NOT a new endpoint) + published threat model; landed identically in T1 brainstem and T2 function_app; security-review sign-off gates any non-LAN deployment.",
-        "'Add a body' onboarding wizard (stand up a no-LLM body and join a fleet in minutes) and branch-twin hatchery exposed as a self-serve feature.",
-        "Foundry packaged as the capability-supply engine (author once -> deterministic test, no LLM -> push fleet-wide in seconds); SKU hypothesis articulated and run with 3-5 internal Microsoft design-partner teams."
-      ],
-      "hero_use_case": "The Foundry \u2014 author a vetted agent once, deterministically test it with no LLM, and push it across a now-authenticated fleet in seconds.",
-      "exit_criteria": "RemoteControl is provably out of the default allowlist and every /api/agent call is signed + audited; a second operator stands up a governed 3-body fleet from the wizard; a security reviewer signs off on a non-LAN pilot; at least one design partner validates the Fleet-Pro paid surface; the gate behaves identically in T1 and T2."
+      "n": 1,
+      "title": "Close the RCE \u2014 the canonical way",
+      "horizon": "0\u20133mo",
+      "theme": "The gating blocker, fixed on the existing wire.",
+      "items": [
+        "Route fleet messaging as SIGNED twin-chat events over /chat (rapp-commons-event/1.0 + rapp-resident server-side verify) \u2014 the corpus already solved authenticated agent-to-agent messaging.",
+        "Retire the unauthenticated POST /api/agent direct route (CONSTITUTION Art XXV).",
+        "Merge with responsible-ai/ROADMAP.md P0 (0.0.0.0 bind, /agents/import unauth, CORS-wildcard, shell=True, plaintext token) into ONE security plan."
+      ]
     },
     {
-      "name": "Phase 2 \u2014 Distribution + a legible fleet",
-      "horizon": "3-9mo",
-      "theme": "Make capability flow without a human in the loop: the egg becomes the unit of distribution, RAR a trustworthy signed registry, the MCP server the default way IDE agents drive the fleet \u2014 and make a running fleet legible with a signed event stream and a read-only control plane.",
-      "objectives": [
-        "Turn capability into a self-serve, signed, verifiable supply chain (no human approval step to move it).",
-        "Make a fleet observable and its versions rollback-safe.",
-        "Turn every Claude Code / Copilot CLI / Cursor user into a distribution channel via the native MCP on-ramp."
-      ],
-      "milestones": [
-        "Signed portable eggs (being/twin/swarm) as a first-class self-serve install; RAR upgraded to a real registry \u2014 provenance, signing, ratings/votes, capability search; install verifies signature before load (no unsigned cartridge enters a node).",
-        "Signed append-only event schema (the 'second wire'): every fleet action emits a signed event; a read-only control-plane cartridge shows live roster, token health, per-node capability inventory, and cross-node version/profile drift via the spine.",
-        "Foundry as a signed content-addressed supply chain over rapp-static-api/1.0 catalogs; hatchery branch-twins become the canary/staging lane; one-command rollback to a known-good capability set.",
-        "MCP on-ramp listed and discoverable in Claude Code / Cursor / GitHub Copilot CLI ecosystems (zero-dep stdio); CopilotCLI delegation (brainstem PLANS, Copilot CLI EXECUTES) packaged as a supported, rate-limit-paced pattern.",
-        "Team workspace + self-serve billing for Fleet-Pro; 'RAPP Author' docs + certification track + a seeded first-party catalog so supply (authors) and demand (installs) bootstrap together."
-      ],
-      "hero_use_case": "Hand someone a being \u2014 install a signed .egg with one command and watch it join their fleet, signature and provenance verified.",
-      "exit_criteria": "An enterprise can install a community agent whose signature and provenance it verifies before load; a fleet operator sees live roster + drift in a dashboard fed by the flight recorder; a new cartridge version proves out on a branch-twin then rolls fleet-wide with one-command rollback; the MCP server is discoverable in at least two IDE ecosystems; Fleet-Pro has self-serve billing and paying teams."
+      "n": 2,
+      "title": "The hero floor",
+      "horizon": "3\u20136mo",
+      "theme": "Make the canonical scenarios actually work end-to-end.",
+      "items": [
+        "Ship the offline-LLM / on-device cognition fallback in the doorman \u2014 the literal Charizard-in-the-woods graceful-degrade floor (HERO \u00a71, still \u26a0 partial).",
+        "Make the federate roll-up persist SIGNED events to git so the commons survives its single Azure resident being deleted (events/ is empty; 67 live events sit in one host).",
+        "Close the ECOSYSTEM_SPEC blockers: Memory & Recall native tier (the largest honest gap) + the Dream-Catcher frame-log & contradiction detection (UTC-first frames are canon)."
+      ]
     },
     {
-      "name": "Phase 3 \u2014 Land in the plane (Agent 365 co-sell, identity, federation)",
-      "horizon": "9-18mo",
-      "theme": "Make graduation into Agent 365 a one-click governed event, convert bottom-up adoption into enterprise revenue through Microsoft's own motion, and cross the operator boundary safely with cryptographic identity and scoped \u2014 never blanket \u2014 capability grants.",
-      "objectives": [
-        "Make a promoted agent unable to enter the Agent 365 plane ungoverned.",
-        "Ship the admin/audit controls IT signs off on, and the procurement-grade trust kit that survives security review.",
-        "Enable safe same-device swarm-to-swarm via keypair identity + scoped, expiring, revocable capability grants (T2T deferred to the far horizon, per adoption-first stance)."
-      ],
-      "milestones": [
-        "doc2cs / connected-solution productized as the enterprise front door: docs + app-reg -> connected-agents solution -> import & publish, one click (live Azure app already proves it); Entra Agent ID auto-enrollment on every T3 deploy.",
-        "Admin console: fleet governance, per-agent allowlists, full flight-recorder audit, secrets/identity, kill-switch; flight-recorder events mapped to a Purview-shaped audit/eDiscovery schema and exportable to M365 compliance.",
-        "Keypair identity per being/Leviathan (rappid:<slug>:<64hex>, read all legacy forms forever, emit only canonical, hash is the join key); signed eggs verifiable on import; scoped, expiring, per-agent capability-grant tokens (NOT a shared flock secret) with revocation + key rotation in a federation handshake profile.",
-        "Security review + SOC posture + Phase-1 auth hardening packaged into a procurement-grade 'trust kit'; Azure Marketplace / Agent 365 connector transact listing so the enterprise SKU is purchasable through existing channels.",
-        "Agent 365 co-sell collateral for MS field/CSAs + 2-3 named reference customers; a lighthouse workflow taken laptop -> governed Agent 365 agent with metric deltas captured as the proof artifact."
-      ],
-      "hero_use_case": "doc2cs \u2014 promote a laptop-born cartridge into a governed Copilot Studio + Teams connected-agents solution with Entra Agent ID auto-enrollment, one click.",
-      "exit_criteria": "A promoted agent cannot enter the plane ungoverned (auto-Entra-enroll proven); flight-recorder audit exports into Purview; an enterprise passes procurement on the trust kit; 2-3 reference customers run governed fleets; the Marketplace listing is transactable; co-sell collateral is in field hands."
+      "n": 3,
+      "title": "The real planetary work \u2014 mesh composition",
+      "horizon": "6\u201312mo",
+      "theme": "Author the missing tier the session was reaching for, in canon vocabulary.",
+      "items": [
+        "Author the mesh-composition governance tier: how neighborhoods compose into estate\u2192metropolis over Issues-mailbox / PR-consent / Pages-edge / offline-degrade / UTC-first frames \u2014 on rapp-estate/1.1 + the rapp-egg/2.0 scale field (node constitutions stop at the single node today).",
+        "Reframe rapp-frame-net / rapp-hydra onto canon vocabulary (mechanism kept \u2014 GitHub raw + Issues + async + degrade; Mars/Agent-365 framing dropped).",
+        "Activate OPTIONAL signing on the existing distribution substrate (fill reserved pubkey/sig_suite slots none\u2192ed25519); rappid eternity's keypair stays opt-in sovereignty, NEVER required."
+      ]
     },
     {
-      "name": "Phase 4 \u2014 The planetary swarm, productized (the new medium delivered)",
-      "horizon": "18mo+",
-      "theme": "Complete the ladder \u2014 a fleet of beings driven as one mind, across orgs, as a portable digital self \u2014 establish RAPP as a new MEDIUM sanctioned by and measured inside Agent 365, deliver the formal ask, and prove the kernel never changed.",
-      "objectives": [
-        "Govern planetary fleets under Microsoft's own identity plane, only after single-operator governance is proven.",
-        "Productize the Leviathan being as a sellable 'digital self' and seed a capability economy around it.",
-        "Deliver the formal Agent 365 ASK and the final kernel-sacred attestation."
-      ],
-      "milestones": [
-        "Entra-brokered fleet auth replaces the shared secret in enterprise mode (brokered-auth / token-protection path: disableBrokeredAuth=false, device-bound tokens); per-agent RBAC scoped to tenant; cross-tenant Leviathans opened only after single-operator governance is proven.",
-        "The 5-estate Leviathan being (Sanctum / Polity / Works / Press / Commons) productized as a signed, identity-bound, policy-scoped 'digital self' representable as a managed org unit inside the plane.",
-        "Formal ASK delivered: (1) recognize the cartridge/egg as a first-class content-addressed capability format in the Agent 365 registry; (2) official connector auto-granting Entra Agent ID + Purview/Defender on promotion; (3) co-authored fleet-wire auth standard on Entra Agent ID; (4) RAPP blessed as the sanctioned sandbox->production on-ramp with telemetry up-flow.",
-        "Ecosystem partner/economy program (third-party eggs/agents/profiles; confidence + reputation first-class); content-addressed capability marketplace feeding the registry; continuous ecosystem-coherence tooling (spine's 33 protocols pinned + neuron-mesh drift sweeps) productized as the governance that keeps a planetary platform coherent.",
-        "Final kernel-sacred attestation: the rapp-agent/1.0 contract is unchanged from Phase 0 \u2014 every capability rode cartridges, profiles, or catalogs."
-      ],
-      "hero_use_case": "One mind, many beings \u2014 an operator drives a cross-org fleet of governed Leviathan beings as a single coordinated organism, every action Entra-identified and Purview-audited.",
-      "exit_criteria": "Agent 365 recognizes the cartridge/egg in its registry and an official connector auto-governs promoted agents; a cross-tenant Leviathan runs under Entra-brokered auth with tenant-scoped RBAC; the kernel-sacred attestation passes; joint GTM is live with measured deltas on Agent 365's own KPIs."
+      "n": 4,
+      "title": "Re-canonize + optional commercial overlay",
+      "horizon": "12mo+",
+      "theme": "Make the new pieces drift-watched; keep Agent 365 a lane, not the goal.",
+      "items": [
+        "Register the session pillars (leviathan, rapp-spine, the swarm wire, rapp-roadmap) into rapp-god/rapp-map/rapp_docs/RAPP-Bible so they're drift-watched (they're invisible to the drift triangle today).",
+        "Stand up CI: the 5 hero acceptance tests + the ANTIPATTERNS 10-rule grep (incl. a PKI/keypair grep and the one-term-'agent' grep) so drift can't land via PR.",
+        "Scope Agent 365 + Entra/Purview as an OPTIONAL Tier-3 commercial overlay; the free protocol stays gh-auth-only.",
+        "Quarantine economic/marketplace/SaaS/always-on drift (coins, NFT gateways, treasuries, always-on Azure) to separate-IP repos per engine-not-experience."
+      ]
     }
   ],
   "hero_use_cases": [
@@ -143,12 +103,7 @@
       "productized": "A signed fleet-wide event stream mapped to a Purview-shaped audit/eDiscovery schema and exported to M365 compliance \u2014 the observability that makes the swarm presentable to Defender and procurement."
     }
   ],
-  "agent365_pitch": {
-    "the_gap": "Agent 365 wins the control plane \u2014 Entra Agent ID for identity, Purview for governance, Defender for security, plus registry and observability \u2014 but a control plane can only govern a population it does not itself create, and it launches against two cold-start gaps. The DEMAND gap: enterprises hold millions of GitHub Copilot seats that don't yet build agents, so there are too few trained makers. The SUPPLY gap: a new agent platform launches with an empty registry and shadow-agent sprawl. Microsoft has the trust root but not the line that fills it.",
-    "the_enhancement": "RAPP is the bottom-up ON-RAMP that fills both gaps without competing for either job. A free, no-API-key, one-line install turns each idle Copilot seat into a trained agent builder in under a minute (closing the demand gap), and the Foundry + a signed RAR registry + portable eggs manufacture and distribute vetted capability (closing the supply gap). Every integration is a cartridge, profile, or connector \u2014 Copilot Studio's builder role and RAPP's sacred kernel both stay untouched. The fit is exact: T3 (Copilot Studio + Teams) IS the Agent 365 plane; doc2cs is the one-click promotion path with Entra Agent ID auto-enrollment; the flight recorder is a Purview-shaped audit substrate; the authenticated fleet wire is a Defender-enforced, Entra-governed control. Every move pushes the team's own KPIs \u2014 agent population, time-to-first-agent, governance coverage %, security posture, seat attach, maker activation \u2014 instead of competing for them.",
-    "planetary_swarm": "The one capability the plane cannot build for itself: the Leviathan \u2014 one mind driving many GOVERNED no-LLM bodies with 0.2s heterogeneous fan-out, no shared-token throttle, alive even when a node's own LLM is dead \u2014 and the Foundry, which patches every agent in the fleet in seconds, provably, with rollback. This is not 50,000 isolated copilots; it is one coordinated organism of governed agents, and as it federates it becomes a fleet of beings driven as one mind across orgs. That is the new MEDIUM \u2014 capability-as-an-object composed into fleet-of-beings-as-one-mind \u2014 measured inside Agent 365, never a fork of it.",
-    "the_ask": "Co-own the on-ramp. (1) Recognize the cartridge/egg as a first-class content-addressed capability format in the Agent 365 registry; (2) ship an official connector so promoted RAPP agents auto-receive Entra Agent ID + Purview/Defender; (3) co-author the fleet-wire auth standard on Entra Agent ID so Leviathan fan-out is governed by Microsoft's own identity plane; (4) bless RAPP as the sanctioned sandbox->production on-ramp with telemetry up-flow, co-sold by field/CSAs. In return, Agent 365 inherits a stocked shelf, a trained maker population, and a swarm medium \u2014 moving its KPIs from day one."
-  },
+  "agent365_pitch": "OPTIONAL commercial on-ramp lane (Tier 3), NOT the north star. Posture: 'enhance, never replace' \u2014 RAPP is the bottom-up funnel that manufactures the governed population Agent 365's control plane governs; a promoted agent receives Entra Agent ID + Purview on graduation. This is GTM positioning for selling INSIDE Microsoft; the free protocol stays gh-auth-only and the self-building metropolis is the actual destination. One-pager deck: ~/Desktop/RAPP_Agent365_onepager.html.",
   "kernel_sacred_guarantees": [
     "The kernel is ONE auditable file (brainstem.py, today ~1,817 lines) and NEVER grows to add a capability \u2014 every capability arrives as an agent/cartridge, a signed catalog, or a spine protocol/profile, never an engine edit. Even the swarm wire is a cartridge (flock_endpoint_agent.py injects its route at import time).",
     "The only LLM wire is POST /chat (the tool-calling loop, bounded by MAX_ROUNDS); the only other wire is a signed append-only event. No new REST endpoints are baked into the engine \u2014 /chat is the sacred endpoint and all capability flows through it.",
@@ -236,8 +191,16 @@
       "the hydra served the same content-hash from raw.githubusercontent.com, jsDelivr, and raw.githack"
     ]
   },
-  "status": {
-    "phase": "experimental",
-    "posture": "Run on a trusted/secure network. The fleet-wire auth that closes the present-day RCE is Phase 1 (signed, default-deny, mTLS/Entra) \u2014 a hard gate before any untrusted-network or enterprise-pilot use, but it does NOT block experimentation on a secure network. Tracked: backlog P0 + Phase 1."
+  "status": "experimental \u00b7 re-grounded 2026-06-28 against the full corpus (kody-w/rapp-map estate-map.json + neurons.json). Builds toward the metropolis; the single-file kernel stays locked.",
+  "grounding": {
+    "re_grounded": "2026-06-28",
+    "basis": "Full corpus scan: 85 rapp repos + a 630-card per-file neuron mesh (kody-w/rapp-map estate-map.json + neurons.json).",
+    "corrections": [
+      "North star is the self-building METROPOLIS, not Agent 365 \u2014 which appears in the entire kernel canon exactly once, as a GTM line (responsible-ai/impact-assessment.md).",
+      "rapp-frame/1.0 was a schema-id COLLISION with the kernel's shipped Dream-Catcher memory-mutation frame (ECOSYSTEM \u00a7147) \u2014 the swarm wire must rename / version-bump.",
+      "The fleet's POST /api/agent direct route violates CONSTITUTION Art XXV 'Chat Is The Only Wire' \u2014 route fleet messaging as signed twin-chat events over /chat (rapp-commons-event/1.0 + rapp-resident, already serving 67 server-verified events).",
+      "PKI is rejected by MASTER_PLAN Part Deux \u00a73 (gh-collaborator IS the auth) EXCEPT rappid eternity's OPTIONAL keypair sovereignty: identity stays sha256 / PKI-free; the keypair is opt-in and NEVER required by any component. The PKI cleanup targets only MANDATORY-keypair spots.",
+      "Build ON the existing network estate (rapp-neighborhood-protocol/1.0, rapp-commons, rapp-resident, rapp-egg/2.0 scale field) instead of coining a parallel 'second wire'."
+    ]
   }
 }

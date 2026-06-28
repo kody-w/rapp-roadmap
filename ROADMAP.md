@@ -1,6 +1,8 @@
 # The RAPP Roadmap
 
-> **North star** — Turn every idle GitHub Copilot seat into a one-minute, no-API-key on-ramp that grows — by the user's own choice — from one brainstem on a laptop into a planetary swarm of governed Leviathans enhancing every Microsoft Agent 365 workflow, while the sacred single-file kernel never changes.
+> ⚠️ **RE-GROUNDED 2026-06-28.** This long-form was written before a full corpus scan (85 repos + a 630-card neuron mesh, [kody-w/rapp-map](https://github.com/kody-w/rapp-map)) caught recency bias. The **current grounded source of truth is [README.md](README.md) + [`roadmap.json`](roadmap.json)**, which re-anchor on MASTER_PLAN's real north star (*"use everyone else's hardware → the self-building metropolis"*), demote Agent 365 to an optional T3 lane, fix the `rapp-frame/1.0` collision, route the fleet over `/chat` (Art XXV), and keep PKI out except rappid eternity's optional keypair. Sections below that frame Agent 365 as the destination or `/api/agent` as the wire are superseded.
+
+> **North star** — *Use everyone else's hardware to run the network* (MASTER_PLAN §5): operators run brainstems on their own machines, subscribe to many neighborhoods (the union = their estate), and estates mesh into a self-building metropolis — while the sacred single-file kernel never changes. Agent 365 is an optional Tier-3 commercial on-ramp, not the destination.
 
 ## The new medium
 

@@ -1,49 +1,47 @@
 # 🗺️ The RAPP Roadmap
 
-**One brainstem on a laptop → a planetary swarm of governed Leviathans enhancing every Microsoft Agent 365 workflow — while the sacred single-file kernel never changes.**
+**Use everyone else's hardware to run the network → operators run brainstems, subscribe to neighborhoods, and those estates mesh into a self-building metropolis — while the single-file kernel never changes.**
 
-This is the roadmap for the [RAPP](https://github.com/kody-w) (Rapid Agent Prototyping Platform) ecosystem to fulfill its goals over its lifespan, ending in a fully-productized version we can bring to the **Microsoft Agent 365** team as a new *medium* — not a competitor.
+> **Re-grounded 2026-06-28** against a full corpus scan — all 85 rapp repos + a 630-card per-file neuron mesh ([kody-w/rapp-map](https://github.com/kody-w/rapp-map)). The prior version drifted toward *"a planetary swarm enhancing Agent 365"* as the destination; this one re-anchors on [MASTER_PLAN](https://github.com/kody-w/RAPP/blob/main/MASTER_PLAN.md)'s actual north star.
 
-> Full roadmap: **[ROADMAP.md](ROADMAP.md)** · machine-readable: [`roadmap.json`](roadmap.json) · route any situation: [rapp-spine](https://github.com/kody-w/rapp-spine)
+> Full roadmap: **[ROADMAP.md](ROADMAP.md)** · machine-readable: [`roadmap.json`](roadmap.json) · route a situation: [rapp-spine](https://github.com/kody-w/rapp-spine) · the estate: [rapp-map](https://github.com/kody-w/rapp-map)
 
-## The new medium
+## The north star (MASTER_PLAN §5)
 
-Capability itself, made into a **portable, signed, content-addressed object** — the *cartridge* and the *egg* — that rides one wire (`POST /chat`, or a signed append-only event), needs **no API keys, no procurement, no engine changes** to run. What HTML did for documents, the cartridge/egg does for agent capability. Composed, these objects form a **Leviathan: a fleet of agent-beings driven as one mind** (0.2s heterogeneous fan-out, no shared-token throttle, alive even when a node's own LLM is dead). The unit is capability-as-an-object; the organism is the swarm; the whole thing is an **enhancement layer Agent 365 governs**.
+> *"Use everyone else's hardware to run the network."*
 
-## Why Agent 365 should co-own this on-ramp
+GitHub already paid for the CDN (`raw`), the auth (`gh auth`), the durable async mailbox (Issues), the consent gate (PRs), and the edge (Pages). RAPP doesn't build a network — it uses the one already running. Operators run brainstems on their own machines and subscribe to many **neighborhoods**; the union of an operator's subscriptions is their **estate**; estates mesh through shared neighborhoods into the **metropolis**, which *"builds itself once it has enough nodes."* **Agent 365 is an optional Tier-3 commercial lane — not the destination.**
 
-- **The gap.** Agent 365 wins the *control plane* — Entra Agent ID, Purview, Defender, registry, observability. But a control plane can only govern a population it does not itself create, and it launches against a **demand/supply cold-start gap**: millions of Copilot seats, no friction-free way to turn one into a *fleet of governed agents*.
-- **The enhancement.** RAPP is the **bottom-up on-ramp** that manufactures that population: a Copilot seat becomes a running agent in a minute, a fleet in an afternoon — then *promotes intact* into Agent 365's plane (Entra identity, Purview governance, Copilot Studio).
-- **Enhance, never replace.** Not a competing builder, not a competing plane, not a Copilot replacement. RAPP feeds Agent 365 the governed agents it needs to govern.
-- **The ask.** Co-own the on-ramp: (1) recognize the **cartridge/egg** as a first-class content-addressed format in the Agent 365 registry; (2) ship an **official connector** so promoted RAPP agents auto-receive Entra Agent ID + Purview/Defender; (3) **co-author the fleet-wire auth standard**.
+## The medium
 
-## The arc
+Capability as a portable, signed, content-addressed object — the **cartridge** (`agent.py`) and the **egg** — that rides one wire (`POST /chat`, or a signed append-only event), needs no API keys or engine changes to run, and **degrades gracefully offline** (the *Charizard-in-the-woods* hero floor). Composed across scales via the `rapp-egg/2.0` **`scale`** field (agent/twin/brainstem/neighborhood/swarm/factory/industry/estate), these objects build the metropolis bottom-up.
+
+## What re-grounding corrected (the honest part)
+
+- **Agent 365 was mis-cast as the north star** — it appears in the entire kernel canon exactly once, as a GTM line. → demoted to an optional T3 lane.
+- **`rapp-frame/1.0` collided** with the kernel's shipped Dream-Catcher memory-frame (ECOSYSTEM §147). → the swarm wire must rename / version-bump.
+- **`/api/agent` violates CONSTITUTION Art XXV** "Chat Is The Only Wire." → route fleet messaging as signed twin-chat events over `/chat` (which `rapp-resident` already does — 67 verified events live).
+- **PKI is rejected** by MASTER_PLAN §3 — *except* rappid eternity's **optional** keypair sovereignty (identity stays `sha256` / PKI-free; the keypair is opt-in and **never required**). The PKI cleanup targets only *mandatory*-keypair spots.
+- **Build ON the existing network estate** (`rapp-neighborhood-protocol/1.0`, `rapp-commons`, `rapp-resident`, the egg `scale` field) — not a parallel "second wire."
+
+## The arc (grounded)
 
 | Phase | Horizon | Theme |
 |---|---|---|
-| **0 · Lock the kernel, light the funnel** | now | make "kernel sacred" a CI invariant; measure the free first-run; pin the Agent-365 positioning |
-| **1 · Close the RCE, make the fleet sellable** | 0–3mo | authenticate the fleet wire (signed, default-deny, audited) — the gating blocker |
-| **2 · Distribution + a legible fleet** | 3–9mo | the egg as unit of distribution; signed registry; MCP as the default IDE on-ramp; observable fleets |
-| **3 · Land in the plane** | 9–18mo | one-click governed graduation into Agent 365 (Entra/Purview); co-sell |
-| **4 · The planetary swarm, productized** | 18mo+ | a fleet of beings driven as one mind, across orgs — the new medium delivered |
+| **0 · Lock the kernel for real** | now | one grail of record · 3→1 Constitution · reconcile version axes · kernel-freeze CI invariant · fix the `rapp-frame/1.0` collision |
+| **1 · Close the RCE — the canonical way** | 0–3mo | signed twin-chat events over `/chat` · retire `/api/agent` (Art XXV) · merge with `responsible-ai/ROADMAP.md` P0 |
+| **2 · The hero floor** | 3–6mo | offline-LLM fallback (Charizard) · git-durable signed log (commons survives its single host) · Memory & Recall + Dream-Catcher |
+| **3 · The real planetary work — mesh composition** | 6–12mo | author the neighborhood→estate→metropolis tier on `rapp-estate/1.1` + the egg `scale` field · reframe frame/hydra onto canon · **optional** signing |
+| **4 · Re-canonize + optional commercial overlay** | 12mo+ | register the new pillars into the drift triangle · CI (hero tests + ANTIPATTERNS grep) · Agent 365 as an optional T3 lane · quarantine economic/SaaS drift |
 
 ## The guarantee that makes it safe
 
-The **kernel never changes.** Every capability — including the swarm, the auth, the registry — ships as an **agent/cartridge/spine-profile on the existing wire**, never an engine edit. A passing CI invariant proves it. (Full guarantees in [ROADMAP.md](ROADMAP.md#the-kernel-stays-sacred--guarantees).)
+The **kernel never changes.** Every capability — the swarm, the auth, the mesh tier — ships as an **agent / cartridge / spine-profile on the existing wire**, never an engine edit. A passing CI invariant proves it.
 
 ## The honest blocker, named first
 
-Today the Leviathan fleet wire (`POST /api/agent/<name>`) is **unauthenticated** — LAN-only, fleet-wide RCE. **Phase 1 closes it** (signed bearer + per-agent default-deny allowlist + mTLS/Entra path), entirely as a cartridge + spine profile, zero kernel edits. No enterprise pilot ships before that gate.
+Today the fleet wire (`POST /api/agent/<name>`) is **unauthenticated** *and* off-canon (Art XXV). **Phase 1 closes it the canonical way** — signed twin-chat events over `/chat`, server-verified per `rapp-resident` — not by hardening a route that shouldn't exist. No enterprise pilot ships before that gate.
 
----
+## Grounded in the full estate
 
-*The hero use cases are the guiding lights — the Leviathan controller, the Foundry, the Hatchery, the MCP on-ramp, CopilotCLI delegation, portable eggs, doc2cs, the Flight Recorder. Each one is a today, and a productized tomorrow. See [ROADMAP.md](ROADMAP.md#hero-use-cases--the-guiding-lights).*
-
-## The adversarial backlog
-
-Before bringing this to anyone, we threw the whole architecture into an 8-lens red-team gauntlet
-+ a completeness critic — **165 wrenches** banked with pre-thought mitigations, so when reality
-throws one, the answer's already here. See **[BACKLOG.md](BACKLOG.md)** (`60 P0 · 76 P1 · 28 P2`)
-and machine-readable [`backlog.json`](backlog.json). It does not block the build; it's the
-long-term hardening bank. The five real pressure points (kernel-freeze-vs-CVE, offline-LLM,
-enterprise-vs-public-telemetry, single-vendor-capture, supply-chain) are all on the roadmap.
+This roadmap is anchored to the verified estate map + per-file neuron mesh in **[kody-w/rapp-map](https://github.com/kody-w/rapp-map)** (`estate-map.json` + `neurons.json`) — load that first. The adversarial **[BACKLOG.md](BACKLOG.md)** (165 wrenches) remains the long-term hardening bank.
