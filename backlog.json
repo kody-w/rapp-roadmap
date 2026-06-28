@@ -1,6 +1,85 @@
 {
   "spec": "rapp-backlog/1.0",
-  "what": "165 adversarial wrenches from 8 red-team lenses (security, github-transport, distributed-consistency, edge-autonomy, scale-economics, enterprise-agent365, identity-governance, crypto) + a completeness critic. Banked to pull from when reality hits \u2014 NOT a blocker list.",
+  "summary": "Two stories. The shipping Tier-1 brainstem has live present-day RCE: it binds 0.0.0.0, imports uploaded Python at /agents/import with no auth, re-reads agent bytes from disk every request (defeating import-time signature checks), and ships an unauthenticated Leviathan endpoint that can drive a shell=True cartridge \u2014 a browser DNS-rebind or one LAN request is full code execution today. The aspirational planetary frame-net is ahead of its primitives: \"signed = trusted\" conflates identity with truth (Byzantine telemetry) and safety (prompt-injection into the reconciling LLM); the \"now\" crypto (HMAC + public verify keys in twin.json) makes every verifier a forger; freshness/rollback hinges on an unsigned latest.json over a raw CDN that is silently stale, forkable, and per-PoP inconsistent; and transport, signing authority, and ledger are all one GitHub org with no abstraction seam, no second home, AUP/C2-label exposure, a hard 100MB-file and one-account-rate-limit ceiling, and \u2014 fatally for the flagship Mars case \u2014 no IP route to the edges it markets to and no local model to think when the link drops. None of this is unrecoverable: most gaps have a clear, bankable mitigation and the resilience model (degrade-to-one, content-addressing, signed chains) is sound once you bake in asymmetric keys, signed freshness, a transport interface, Byzantine fusion, structured-not-freeform guidance, out-of-band identity, and a real offline cognition path. Honest state: a strong thesis on primitives that are individually fixable but collectively not yet trustworthy, plus physics/policy trade-offs (light-delay response, offline-LLM quality, enterprise rejection of public telemetry, Mars-not-on-the-internet) that can be managed but never eliminated.",
+  "categories": [
+    "Local Server Security",
+    "Cryptography & Key Lifecycle",
+    "Frame Foundry",
+    "Freshness, Replay & Rollback",
+    "Byzantine Tolerance & Trust Fusion",
+    "Prompt Injection & LLM Safety",
+    "Offline Cognition",
+    "Supply Chain & Content Authenticity",
+    "Transport",
+    "Telemetry Channel Integrity & Privacy",
+    "Edge Identity & Bootstrap",
+    "Distributed Consistency",
+    "Autonomy Safety & Human-in-the-Loop",
+    "Enterprise Governance"
+  ],
+  "hard_truths": [
+    "GitHub-as-transport is a single-vendor SPOF you don't control. Even abstracted and multi-homed, GitHub-as-primary stays an AUP/C2-label/ToS liability with no SLA; one abuse report, DMCA, sanctions flag, or billing lapse can dark-kill the wire. 'No server, infinitely resilient' is really 'fragile because single-vendor' until a funded second transport exists, which doubles attack surface and ops burden.",
+    "Mars is not on the internet. No IP route to github.com from a real edge (scheduled DSN passes over DTN/Bundle Protocol), and whole classes of Earth edges (GFW, sanctions, air-gap, corp proxies) are equally unreachable. 'Planetary frame-net over GitHub' must become eventual (hours-to-days), not timely, consistency for exactly the edges it markets to.",
+    "Offline cognition quality is a hard floor. An on-device SLM is far weaker than Copilot, costs power/footprint, and deterministic policy can't cover novel situations (must hold/safe-state). You cannot have Copilot-class reasoning with zero link.",
+    "Enterprise/gov/defense reject public-GitHub telemetry outright; world-readable, permanently-archived telemetry is a non-starter, and the governed alternative (Entra/Purview) erodes the no-keys, GitHub-native, works-anywhere simplicity that is the differentiator. The two audiences want opposite things.",
+    "Light-delay makes detect-and-respond physically impossible. Revocation/patch/quarantine can't beat light-delay + CDN cache + the next contact window (days for Mars). You must design fail-safe-under-compromise-for-days; a compromise landing before a blackout is guaranteed persistence, with no remote kill for an off-grid edge mid-action.",
+    "'Signed != true' (Byzantine input) is only partly solvable: k-of-n is defeated by collusion, genuine anomalies get wrongly quarantined (a permanent availability-vs-integrity dial), reputation has a cold-start, and physical capture defeats all software trust.",
+    "Prompt injection into an LLM edge is unsolved. Any guidance schema expressive enough to be useful can smuggle intent, LLMs imperfectly honor 'data not instructions,' and structured-only guidance trades away the flexibility that motivated an LLM edge. The below-LLM guardrail reduces but can't eliminate this, and becomes the new highest-value target.",
+    "Autonomy duration vs recall/safety is a fundamental tension: long-lived creds + wide envelopes enable useful autonomy but widen capture blast radius; short TTLs + conservative fail-safe strand healthy edges that merely lost contact. Every dial that buys capability buys risk.",
+    "Cryptography moves the trust boundary; it never removes it. An offline org root still has a loss/compromise story, multi-party review is defeated by compromising author+reviewer, and verify-on-execute still trusts whoever can write file+manifest together. Content-addressing proves integrity, not authenticity.",
+    "Determinism and frontier-model quality are partly at odds: a deterministic, auditable, failover-safe foundry needs the LLM frozen or out of the critical path, capping echo quality and breaking when providers deprecate models. Reproducible OR best-available reasoning in the critical path, not fully both.",
+    "The two protocols have opposite trust models and the seam is permanently attackable. Leviathan (obey directly, no veto) and frame-net (judge locally) can't safely share a body. Even fully authenticated, fleet fan-out from one credential is structurally C2-shaped, so a stolen-but-authorized driver within scope is real, unavoidable damage."
+  ],
+  "top_pre_solves": [
+    {
+      "title": "Define the Transport interface NOW \u2014 the meta-SPOF is having no seam to leave GitHub",
+      "why": "READ is hardcoded to raw, WRITE to Issues, the foundry to Actions. Nearly every other mitigation (ban, outage, AUP takedown, scale ceiling, geo-block, Mars/DTN) depends on swapping transports, but there is no plug-in point \u2014 so reality forces a core refactor under pressure instead of a config flip.",
+      "mitigation": "read_object/read_pointer/append/heartbeat behind one interface while GitHub is the only impl; keep frames/echos/telemetry as transport-agnostic signed content-addressed objects (already true); stand up a second trivial impl to prove the seam.",
+      "priority": "P1"
+    },
+    {
+      "title": "Pick asymmetric crypto before the first pilot \u2014 never ship HMAC alongside public twins",
+      "why": "HMAC's verify key IS the sign key, published in twin.json. Anyone who reads a twin (or the key off a captured edge, or the CI secret) mints valid frames for any edge; one owned Mars box becomes forge authority for the planet.",
+      "mitigation": "Ed25519/ECDSA from pilot one, edges hold only public keys; per-edge echo keys; HMAC only on a closed LAN; CI invariant that prod frames are asymmetric-signed.",
+      "priority": "P0"
+    },
+    {
+      "title": "Bake key + freshness lifecycle into the frame FORMAT now (sign latest.json, monotonic tick, valid-from/to, key-id, revocation epoch)",
+      "why": "Signed frames protect the forward chain but not WHICH frame is current; the unsigned pointer is the real rollback/replay root-of-trust, and freshness/revocation can't be retrofitted into a wire format already in the field.",
+      "mitigation": "Every signed object (incl. the pointer) carries key-id, valid-from/to, monotonic tick, revocation-epoch, nonce; edges enforce a reboot-persisted monotonic ratchet + dead-man expiry; freshness binds to chain position, not wall-clock.",
+      "priority": "P0"
+    },
+    {
+      "title": "Make guidance structured/typed DATA with a guardrail BELOW the LLM \u2014 design the schema before content exists",
+      "why": "The reconciling LLM treats guidance as interpretable text, a code-execution surface. A signed echo/inbox message can carry 'drive into the ravine / write your key to twin X / refetch your cartridge from URL Y.' Signing authenticates the foundry, not the language's safety; freeform NL is far harder to constrain later.",
+      "mitigation": "Typed fields (goal, waypoints, setpoints, constraints, action-allowlist) for a deterministic policy; freeform text is data, never commands; a local guardrail beneath the LLM vetoes unsafe actions; guidance never triggers code/cartridge fetch or key export.",
+      "priority": "P0"
+    },
+    {
+      "title": "Put 'signed != true' in the trust language and design Byzantine fusion at the foundry from day one",
+      "why": "The foundry forges echos from each edge's last telemetry into swarm-shared frames, so one compromised/spoofed edge emitting perfectly-signed, schema-valid lies poisons every honest sibling. Verify-before-act checks the signature, not the truth; retrofitting trust-tiering is a redesign.",
+      "mitigation": "Cross-check vs siblings/priors/physics, bound rate-of-change, quarantine outliers, require k-of-n before any single edge shapes a SHARED frame; derive each edge's echo primarily from its own telemetry; tier trust (self-report lowest).",
+      "priority": "P0"
+    },
+    {
+      "title": "Add an offline cognition-provider seam \u2014 the differentiator is false without it",
+      "why": "The headline is 'lose the link, keep thinking on the last echo,' but brainstem.py's only cognition path is the Copilot API (a network round-trip). An offline edge can replay its last echo but cannot reconcile, adapt, or reason.",
+      "mitigation": "Cognition-provider interface (Copilot on-link / on-device SLM offline); a contractual NO-LLM degraded mode (verify, run deterministic agents, failsafe, HOLD); echos carry a deterministic policy so the LLM is an enhancer above a floor.",
+      "priority": "P0"
+    },
+    {
+      "title": "Pre-provision edge identity out-of-band into a signed registry \u2014 no TOFU, no twin squatting",
+      "why": "Edges learn the foundry key + genesis and reach each other via naming-convention twins, with the verify key self-asserted in a rewritable twin.json. Fetching the root over the untrusted wire at first boot \u2014 or pre-registering a not-yet-deployed edge's twin \u2014 owns the edge from birth.",
+      "mitigation": "Bake foundry public key + genesis into the .egg via signed provisioning (never fetch the root over the wire it secures); pin it; register each edge's key + canonical twin path in the SIGNED canonical index at launch; the key is the join key.",
+      "priority": "P0"
+    },
+    {
+      "title": "Answer the Agent 365 trust-handoff before the first pitch \u2014 managed promotion strips local-dev superpowers",
+      "why": "A promoted cartridge hot-reloads disk code and auto-installs pip deps at import, and the frame-net's command channel is an Action-signed echo with no Entra ID / Purview trail / Defender posture. Without an answer, RAPP is 'the supply-chain bypass,' not 'the ramp' \u2014 the A365 security team asks this in meeting one.",
+      "mitigation": "Every object crossing into A365 registers an Entra Agent ID, gets Purview+Defender review, and loses hot-reload/auto-install (frozen, manifest-pinned); foundry key becomes an Entra-managed identity; explicit precedence (A365 policy wins).",
+      "priority": "P1"
+    }
+  ],
   "counts": {
     "P0": 60,
     "P1": 76,
