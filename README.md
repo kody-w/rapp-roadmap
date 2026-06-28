@@ -19,7 +19,7 @@ Capability as a portable, signed, content-addressed object — the **cartridge**
 ## What re-grounding corrected (the honest part)
 
 - **Agent 365 was mis-cast as the north star** — it appears in the entire kernel canon exactly once, as a GTM line. → demoted to an optional T3 lane.
-- **`rapp-frame/1.0` collided** with the kernel's shipped Dream-Catcher memory-frame (ECOSYSTEM §147). → the swarm wire must rename / version-bump.
+- **`rapp-frame/1.0` collided** with the kernel's Dream-Catcher memory-frame (ECOSYSTEM §147). → **✅ resolved**: bumped to `rapp-frame/2.0`, unifying both as one `kind`-discriminated family (`memory.*`/`swarm.*`).
 - **`/api/agent` violates CONSTITUTION Art XXV** "Chat Is The Only Wire." → route fleet messaging as signed twin-chat events over `/chat` (which `rapp-resident` already does — 67 verified events live).
 - **PKI is rejected** by MASTER_PLAN §3 — *except* rappid eternity's **optional** keypair sovereignty (identity stays `sha256` / PKI-free; the keypair is opt-in and **never required**). The PKI cleanup targets only *mandatory*-keypair spots.
 - **Build ON the existing network estate** (`rapp-neighborhood-protocol/1.0`, `rapp-commons`, `rapp-resident`, the egg `scale` field) — not a parallel "second wire."
