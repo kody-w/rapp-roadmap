@@ -4,14 +4,15 @@
   "phases": [
     {
       "n": 0,
-      "title": "Lock the kernel for real",
+      "title": "The kernel/distro model (the Linux philosophy)",
       "horizon": "now",
-      "theme": "Make 'kernel sacred' true and testable before building on it.",
+      "theme": "Name the model that already holds \u2014 a sacred versioned kernel, distros pinned on top \u2014 and make it testable.",
       "items": [
-        "Heal the kernel-home split-brain: declare ONE grail of record between rapp-installer and kody-w/RAPP for brainstem.py/VERSION/CONSTITUTION (rapp-god shows 12 active drifts).",
-        "Collapse the 3 divergent Constitution copies and reconcile the version axes (CLAUDE.md 0.4.0 vs ledger 0.6.0 vs live 0.6.1).",
-        "Make kernel-freeze a CI invariant (byte-identity check), not discipline-only.",
         "\u2705 DONE 2026-06-28 \u2014 Fixed the rapp-frame schema-id collision: bumped to rapp-frame/2.0, unifying the kernel's Dream-Catcher memory-frame + the swarm wire as one kind-discriminated family (memory.*/swarm.*); sig made optional.",
+        "\u2705 CONFIRMED 2026-06-28 \u2014 No split-brain: rapp-installer is the KERNEL (the grail); RAPP is a clean DISTRO pinning kernel v0.6.0 byte-identical. Codified the Linux kernel/distro model in rapp-spine FOUNDATION \u00a72a.",
+        "Make the kernel-freeze CI invariant `distro kernel files == grail @ its pinned tag` (NOT main==main); have each distro declare its pinned kernel version (a KERNEL_PIN file).",
+        "Standardize the grail's tag scheme to one form `vX.Y.Z` (currently mixed: v0.6.0 vs brainstem-v0.6.1) so distros can pin cleanly.",
+        "Clarify the two governance levels: the KERNEL constitution is the grail's (authoring law); a distro's fuller governance (RAPP's) is USERLAND \u2014 don't force-merge. Reconcile only the stale CLAUDE.md 0.4.0 vs the 0.6.x kernel.",
         "Keep rappid eternity AS-IS (sha256 identity, keypair OPTIONAL); scope any PKI cleanup to mandatory-keypair spots only."
       ]
     },
@@ -200,7 +201,8 @@
       "RESOLVED 2026-06-28: rapp-frame bumped to 2.0, UNIFYING the kernel's Dream-Catcher memory-frame (ECOSYSTEM \u00a7147) and the planetary swarm wire as ONE content-addressed, hash-chained, UTC-first envelope; `kind` discriminates memory.* vs swarm.*. Every 1.0 frame is a valid 2.0 frame; no kernel edit. SPEC/agent/artifacts/foundation/registry all on 2.0.",
       "The fleet's POST /api/agent direct route violates CONSTITUTION Art XXV 'Chat Is The Only Wire' \u2014 route fleet messaging as signed twin-chat events over /chat (rapp-commons-event/1.0 + rapp-resident, already serving 67 server-verified events).",
       "PKI is rejected by MASTER_PLAN Part Deux \u00a73 (gh-collaborator IS the auth) EXCEPT rappid eternity's OPTIONAL keypair sovereignty: identity stays sha256 / PKI-free; the keypair is opt-in and NEVER required by any component. The PKI cleanup targets only MANDATORY-keypair spots.",
-      "Build ON the existing network estate (rapp-neighborhood-protocol/1.0, rapp-commons, rapp-resident, rapp-egg/2.0 scale field) instead of coining a parallel 'second wire'."
+      "Build ON the existing network estate (rapp-neighborhood-protocol/1.0, rapp-commons, rapp-resident, rapp-egg/2.0 scale field) instead of coining a parallel 'second wire'.",
+      "CONFIRMED 2026-06-28: the 'kernel split-brain' (rapp-installer vs RAPP) was a FALSE ALARM. rapp-installer IS the kernel (the grail); RAPP is a clean DISTRO pinning kernel v0.6.0 byte-identical (brainstem.py + basic_agent.py + VERSION all verified == grail@v0.6.0) \u2014 Ubuntu-LTS-style. Adopt the Linux kernel/distro model explicitly: kernel sacred + versioned + never-break-userspace ABI; distros = pinned kernel + userland; anyone can spawn a distro. See rapp-spine FOUNDATION \u00a72a."
     ]
   }
 }

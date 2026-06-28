@@ -23,12 +23,13 @@ Capability as a portable, signed, content-addressed object — the **cartridge**
 - **`/api/agent` violates CONSTITUTION Art XXV** "Chat Is The Only Wire." → route fleet messaging as signed twin-chat events over `/chat` (which `rapp-resident` already does — 67 verified events live).
 - **PKI is rejected** by MASTER_PLAN §3 — *except* rappid eternity's **optional** keypair sovereignty (identity stays `sha256` / PKI-free; the keypair is opt-in and **never required**). The PKI cleanup targets only *mandatory*-keypair spots.
 - **Build ON the existing network estate** (`rapp-neighborhood-protocol/1.0`, `rapp-commons`, `rapp-resident`, the egg `scale` field) — not a parallel "second wire."
+- **The "kernel split-brain" was a false alarm** — rapp-installer is the kernel (the grail); RAPP is a clean *distro* pinning kernel `v0.6.0` byte-identical (Ubuntu-LTS-style). → adopt the **Linux kernel/distro model** explicitly; spawn distros freely ([rapp-spine FOUNDATION §2a](https://github.com/kody-w/rapp-spine/blob/main/FOUNDATION.md)).
 
 ## The arc (grounded)
 
 | Phase | Horizon | Theme |
 |---|---|---|
-| **0 · Lock the kernel for real** | now | one grail of record · 3→1 Constitution · reconcile version axes · kernel-freeze CI invariant · ✅ `rapp-frame` collision fixed (→ 2.0) |
+| **0 · The kernel/distro model** (Linux philosophy) | now | ✅ no split-brain — RAPP is a clean distro pinning kernel `v0.6.0` · freeze CI = `distro == grail@tag` · standardize tags · ✅ `rapp-frame` → 2.0 |
 | **1 · Close the RCE — the canonical way** | 0–3mo | signed twin-chat events over `/chat` · retire `/api/agent` (Art XXV) · merge with `responsible-ai/ROADMAP.md` P0 |
 | **2 · The hero floor** | 3–6mo | offline-LLM fallback (Charizard) · git-durable signed log (commons survives its single host) · Memory & Recall + Dream-Catcher |
 | **3 · The real planetary work — mesh composition** | 6–12mo | author the neighborhood→estate→metropolis tier on `rapp-estate/1.1` + the egg `scale` field · reframe frame/hydra onto canon · **optional** signing |
