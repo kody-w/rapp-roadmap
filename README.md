@@ -28,7 +28,7 @@ Capability as a portable, signed, content-addressed object — the **cartridge**
 
 | Phase | Horizon | Theme |
 |---|---|---|
-| **0 · Lock the kernel for real** | now | one grail of record · 3→1 Constitution · reconcile version axes · kernel-freeze CI invariant · fix the `rapp-frame/1.0` collision |
+| **0 · Lock the kernel for real** | now | one grail of record · 3→1 Constitution · reconcile version axes · kernel-freeze CI invariant · ✅ `rapp-frame` collision fixed (→ 2.0) |
 | **1 · Close the RCE — the canonical way** | 0–3mo | signed twin-chat events over `/chat` · retire `/api/agent` (Art XXV) · merge with `responsible-ai/ROADMAP.md` P0 |
 | **2 · The hero floor** | 3–6mo | offline-LLM fallback (Charizard) · git-durable signed log (commons survives its single host) · Memory & Recall + Dream-Catcher |
 | **3 · The real planetary work — mesh composition** | 6–12mo | author the neighborhood→estate→metropolis tier on `rapp-estate/1.1` + the egg `scale` field · reframe frame/hydra onto canon · **optional** signing |
