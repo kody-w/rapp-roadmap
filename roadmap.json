@@ -61,6 +61,20 @@
         "Scope Agent 365 + Entra/Purview as an OPTIONAL Tier-3 commercial overlay; the free protocol stays gh-auth-only.",
         "Quarantine economic/marketplace/SaaS/always-on drift (coins, NFT gateways, treasuries, always-on Azure) to separate-IP repos per engine-not-experience."
       ]
+    },
+    {
+      "n": 5,
+      "title": "The household layer \u2014 organs, presence & persistence",
+      "horizon": "now (proven on the LAN flock)",
+      "theme": "The brainstem natively does what borrowed tools (openclaw) did \u2014 as drop-in organs it runs BY ITSELF, with operator visibility + control. Own the orchestration; borrow the muscle.",
+      "items": [
+        "iMessage organ suite (drop-in, native): a receive+dispatch+reply GATEWAY (the owner's DM command channel) and a group PRESENCE organ (openclaw reverse-engineered) that reads the room and replies AS a persona ONLY when appropriate. Engine = the brainstem's own /chat. PROVEN on the LAN: the brainstem responded as the rappter indistinguishably (assimilated soul + 682-msg group context).",
+        "Burrow (launchd persistence) as a first-class capability: a LaunchAgent (RunAtLoad + KeepAlive{SuccessfulExit:false} + Aqua session + FDA-pinned binary) makes the brainstem + every organ in agents/ survive reboot/crash. Bakes in the macOS gotchas (FDA pins to the interpreter binary; Local-Network privacy; sleep=missed inbound; no setsid on macOS).",
+        "The ORGAN-RAPPLICATION pattern + Organ Control Room: an organ pulls a PWA from a global repo (kody-w/rapp-burrow) and serves it LOCALLY, giving the operator visibility + enable/disable + observe/live control over persistent/monitoring organs. Generalize: any organ registers a control-room card.",
+        "Borrow-the-engine pattern: own the orchestration (brainstem + organs); borrow the muscle (ClaudeCode/CopilotCLI as drop-in agents) \u2014 swappable, never a dependency.",
+        "Persona assimilation / seamless-swap: assimilate an external system's lived context (chat history, persona, memory) into a brainstem soul so it continues with no visible handoff. Reusable capability.",
+        "PRODUCTIZE the organ suite: DM pairing (vs hardcoded allowlist); GROUP-SANDBOX security (a group message is UNTRUSTED -> conversational-only, no shell/dangerous-tool access); multi-channel (Telegram/Discord/Signal/Slack/... via the same organ pattern, per openclaw 2026.6.10); async long-task follow-ups ('working\u2026 -> result')."
+      ]
     }
   ],
   "hero_use_cases": [
@@ -135,7 +149,10 @@
     "'RAPP Author' docs + certification track + seeded first-party catalog so marketplace supply and demand bootstrap together.",
     "Federation: scoped, expiring, revocable per-agent capability-grant tokens (not a shared secret) + key rotation; Entra-brokered fleet auth (device-bound tokens, disableBrokeredAuth=false) for enterprise mode with tenant-scoped RBAC.",
     "Continuous ecosystem-coherence CI: spine's 33 protocols pinned + ecosystem-sync / neuron-mesh drift sweeps productized as governance.",
-    "GitHub Copilot OAuth ToS clarity / a sanctioned relationship secured as part of the Agent 365 conversation."
+    "GitHub Copilot OAuth ToS clarity / a sanctioned relationship secured as part of the Agent 365 conversation.",
+    "Chat UI as a PWA: make the brainstem's built-in web UI (index.html at /) an installable PWA (manifest + service worker + offline shell) so users run the twin as a NATIVE app on macOS + Windows \u2014 dock/taskbar presence, no browser chrome.",
+    "Brainstem -> Claude-Code-class engine (from the reverse-engineering): replace the kernel's hardcoded 3-round tool loop (brainstem.py for _ in range(3)) with a budgeted MAX_TURNS loop returning a stop_reason \u2014 the ONE small versioned kernel release. Add drop-in agents for subagents (Task/context-isolation), planning, better edit tooling, context compaction, and hooks. Borrow ClaudeCode/CopilotCLI until native parity.",
+    "Organ control-surface standard: a convention for organs to expose status + enable/disable so the Organ Control Room can aggregate ANY of them; the control room binds LAN behind the same Phase-1 fleet-auth as /api/agent."
   ],
   "top_risks": [
     "BLOCKER \u2014 unauthenticated fleet wire is fleet-wide RCE TODAY. Verified: agents/flock_endpoint_agent.py injects POST /api/agent/<name> into the Werkzeug url_map and calls inst.perform(**body) directly with no auth, while remote_control_agent.py runs arbitrary shell (subprocess.run(command, shell=True)) and BrainstemRelay enables lateral movement right behind it. Until signed + default-deny per-agent allowlist + mTLS ships (Phase 1), there is no enterprise SKU, no passing security review, no monetization. It must be the FIRST productization milestone \u2014 and even LAN exposure is a standing liability, so the cartridges stay default-OFF until then.",
@@ -149,7 +166,9 @@
     "Federation key management \u2014 signed eggs + capability grants are only as safe as their revocation and rotation story; a leaked zookeeper/being key without fleet-wide revocation compromises every node that trusts it. Scoped, expiring grants \u2014 never a shared blanket secret \u2014 are mandatory before crossing the operator boundary.",
     "Ecosystem-coherence drift at scale \u2014 33 protocols across 6 layers already require active drift sweeps; as the platform federates across orgs, incoherence becomes a product-quality and trust risk. The coherence tooling (spine / ecosystem-sync / neuron-mesh) must itself be productized as governance, not run as ad-hoc maintenance.",
     "Allowlist theater \u2014 if RemoteControl or any shell/exec agent ever sits in the DEFAULT allowlist, the Phase 1 gate is cosmetic. Default-deny with shell agents OUT must be enforced and tested, not assumed.",
-    "Moving target \u2014 Agent 365's Entra Agent ID, registry, and Purview/Defender hooks are still evolving; keep the integration spec-driven via rapp-spine so RAPP tracks the plane instead of hard-coding against a snapshot, and resist leading with cross-tenant federation (18mo+) before single-operator governance is proven."
+    "Moving target \u2014 Agent 365's Entra Agent ID, registry, and Purview/Defender hooks are still evolving; keep the integration spec-driven via rapp-spine so RAPP tracks the plane instead of hard-coding against a snapshot, and resist leading with cross-tenant federation (18mo+) before single-operator governance is proven.",
+    "GROUP-CHANNEL INJECTION -> RCE: a group-presence organ that dispatches an UNTRUSTED group message to the full /chat (with shell/ClaudeCode agents available) is an injection-to-RCE path \u2014 a group member could drive dangerous actions. Mitigation (per openclaw's sandbox model): non-main/group sessions must be conversational-only / sandboxed (deny shell/cron/browser). Ship BEFORE any group go-live.",
+    "Local control surfaces bind 0.0.0.0 with no auth (Organ Control Room :7077, brainstem :7071). Fine on a trusted LAN, a liability off it \u2014 gate behind Phase-1 fleet-auth before any exposure."
   ],
   "architecture": {
     "the_atom": "the brainstem (rapp-agent/1.0) \u2014 the locked kernel; everything composes from it",

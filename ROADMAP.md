@@ -208,3 +208,7 @@ The brainstem is the **atom**; the kernel is **locked**; every spec has a global
 
 The kernel never changed — every pillar is agents/cartridges/profiles on the wire. An edge is a full brainstem, so **every hero use case works at the edge, unchanged**, even on a spotty link, even offline.
 
+
+## Household layer (added 2026-06-29)
+
+The brainstem now natively reproduces openclaw as drop-in organs it runs by itself: an iMessage **gateway** + group **presence** organ (read-the-room, persona-driven, proven indistinguishable on the LAN), a **burrow** organ (launchd persistence for the brainstem + all organs), and the **Organ Control Room** (a PWA pulled from a global repo, served locally, with enable/disable + observe/live toggles). Plus: make the **chat UI a PWA** (native on macOS/Windows), and bring the brainstem engine to **Claude-Code-class** (budgeted loop + subagents). Own the orchestration; borrow the muscle. See roadmap.json phase "The household layer".
