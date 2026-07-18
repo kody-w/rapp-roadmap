@@ -1,0 +1,43 @@
+{
+  "spec": "rapp-board/1.0",
+  "title": "RAPP Roadmap Board",
+  "subtitle": "Live kanban over static JSON — git history is the audit trail. Edit board.json to move a card.",
+  "updated": "2026-07-18",
+  "columns": [
+    {
+      "key": "done",
+      "name": "Done",
+      "cards": [
+        { "title": "Zero-config device probe (pull-mode)", "tag": "device", "note": "curl|bash on any machine → installs sandboxed, runs suite, reports to a GitHub issue. Runner push-mode retired.", "link": "https://github.com/kody-w/rapp-canary/blob/main/.ring/tools/device_probe.sh" },
+        { "title": "Probe pytest false-fail fix", "tag": "device", "note": "Installer ships runtime deps only; probe now installs pytest first. Merged 023ebb4, container-verified PASS.", "link": "https://github.com/kody-w/rapp-canary" },
+        { "title": "Flight Deck port-collision false-✅ fix", "tag": "deck", "note": "Deck one-liner reported success while serving wrong bytes. Fixed + merged. rapp-train#1 filed for its copy.", "link": "https://github.com/kody-w/rapp-train/issues/1" },
+        { "title": "Twin in Residence (.twin) + public/private layers", "tag": "twin", "note": "Per-repo resident AI over /chat. Public travels, .twin/private/ stays on device. flight/project-twin.", "link": "https://github.com/kody-w/rapp-twin" },
+        { "title": "Naming landgrab — 15 rapp-* repos", "tag": "brand", "note": "brainstem, twin, flight-deck, rings… Clean Apple-style branding, DISCLAIMER + MIT LICENSE each.", "link": "https://github.com/kody-w/rapp-platform" },
+        { "title": "rapp-ip private portfolio", "tag": "ip", "note": "Marks register, filing plan, patterns (patent candidates + dates), dated provenance.", "link": "https://github.com/kody-w/rapp-ip" },
+        { "title": "CEO second brain + skill", "tag": "ceo", "note": "wildhaven-ceo/rapp-brain/ — plain-English, Molly uses it by asking questions.", "link": "https://github.com/kody-w/wildhaven-ceo" },
+        { "title": "Battlestation Windows join verified", "tag": "device", "note": "Real Windows one-liner install, driven over SSH (no VNC), serving v0.6.16.", "link": "" }
+      ]
+    },
+    {
+      "key": "flight",
+      "name": "In Flight / Next",
+      "cards": [
+        { "title": "flight/project-twin graduation", "tag": "twin", "note": "Extract proven twin work into a mainline wave when Kody says. Carries FLIGHT.json — never bulk-merge.", "link": "" },
+        { "title": "v0.6.17 grail release", "tag": "release", "note": "Parked at the gate. Fresh qualification on current mains → grail_gate → release-day rehearsal → human merge.", "link": "" },
+        { "title": "Canary issues #3/#4/#5", "tag": "eng", "note": "Models-API auth fallback (existential), community-agent trust model, installer signing.", "link": "https://github.com/kody-w/rapp-canary/issues" },
+        { "title": "Wire guard.sh into push paths", "tag": "security", "note": "Content gate built (would've caught the leak) but nothing calls it yet. Kody-review the wiring.", "link": "" }
+      ]
+    },
+    {
+      "key": "blocked",
+      "name": "Blocked — human only",
+      "cards": [
+        { "title": "🔴 Rotate localtoolsdev Azure key", "tag": "security", "note": "LIVE public secret leak — rotate in portal, then git rm --cached + purge/private, close the alert.", "link": "https://github.com/kody-w/localtoolsdev" },
+        { "title": "Reconnect Google Calendar + add 3 events", "tag": "ip", "note": "OAuth expired. Events staged in wildhaven-ceo/today/rapp-deadlines.md.", "link": "" },
+        { "title": "Grab a RAPP org name", "tag": "brand", "note": "rapp-platform / rapphq / getrapp all free today. 2 min, assign to Wildhaven LLC.", "link": "" },
+        { "title": "Attorney: file RAPP trademark", "tag": "ip", "note": "Free USPTO clearance search first; confirm names sit inside the Microsoft carve-out.", "link": "" },
+        { "title": "⏰ RAPP patent deadline ~2027-07-17", "tag": "ip", "note": "One-year clock from public disclosure (2026-07-17/18). Start filing by spring 2027.", "link": "" }
+      ]
+    }
+  ]
+}
