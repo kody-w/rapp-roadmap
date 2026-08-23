@@ -56,7 +56,7 @@
       "horizon": "12mo+",
       "theme": "Make the new pieces drift-watched; keep Agent 365 a lane, not the goal.",
       "items": [
-        "Register the session pillars (leviathan, rapp-spine, the swarm wire, rapp-roadmap) into rapp-god/rapp-map/rapp_docs/RAPP-Bible so they're drift-watched (they're invisible to the drift triangle today).",
+        "Register the session pillars (leviathan, rapp-spine, the swarm wire, rapp-roadmap) in their current public source repositories, rapp-spine, and public docs. The former rapp-god/rapp-map/RAPP-Bible mirror triangle is retired and must not be used as an authority or publication target.",
         "Stand up CI: the 5 hero acceptance tests + the ANTIPATTERNS 10-rule grep (incl. a PKI/keypair grep and the one-term-'agent' grep) so drift can't land via PR.",
         "Scope Agent 365 + Entra/Purview as an OPTIONAL Tier-3 commercial overlay; the free protocol stays gh-auth-only.",
         "Quarantine economic/marketplace/SaaS/always-on drift (coins, NFT gateways, treasuries, always-on Azure) to separate-IP repos per engine-not-experience."

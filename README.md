@@ -33,7 +33,7 @@ Capability as a portable, signed, content-addressed object — the **cartridge**
 | **1 · Close the RCE — the canonical way** | 0–3mo | signed twin-chat events over `/chat` · retire `/api/agent` (Art XXV) · merge with `responsible-ai/ROADMAP.md` P0 |
 | **2 · The hero floor** | 3–6mo | offline-LLM fallback (Charizard) · git-durable signed log (commons survives its single host) · Memory & Recall + Dream-Catcher |
 | **3 · The real planetary work — mesh composition** | 6–12mo | author the neighborhood→estate→metropolis tier on `rapp-estate/1.1` + the egg `scale` field · reframe frame/hydra onto canon · **optional** signing |
-| **4 · Re-canonize + optional commercial overlay** | 12mo+ | register the new pillars into the drift triangle · CI (hero tests + ANTIPATTERNS grep) · Agent 365 as an optional T3 lane · quarantine economic/SaaS drift |
+| **4 · Re-canonize + optional commercial overlay** | 12mo+ | register new pillars in current public source/spine indexes (the former mirror triangle is retired) · CI (hero tests + ANTIPATTERNS grep) · Agent 365 as an optional T3 lane · quarantine economic/SaaS drift |
 
 ## The guarantee that makes it safe
 
