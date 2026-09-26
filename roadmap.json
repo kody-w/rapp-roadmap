@@ -1,15 +1,16 @@
 {
   "spec": "rapp-roadmap/1.0",
+  "format_authority": "https://github.com/kody-w/rapp-1/blob/eb50008011447f5e69372ac22a1755f0978d15ed/SPEC.md",
   "north_star": "Use everyone else's hardware to run the network (MASTER_PLAN \u00a75). Operators run brainstems on their own machines and subscribe to many NEIGHBORHOODS; the union is their ESTATE; estates mesh into a self-building METROPOLIS. This roadmap builds toward that metropolis WITHOUT ever unlocking the single-file kernel. Agent 365 is an OPTIONAL commercial on-ramp lane (Tier 3), not the destination.",
-  "the_medium": "Capability as a portable, signed, content-addressed object \u2014 the cartridge (agent.py) and the egg \u2014 that rides one wire (POST /chat, or a signed append-only event), needs no API keys or engine changes to run, and degrades gracefully offline (the Charizard hero floor). Composed across scales via the rapp-egg/2.0 `scale` field (agent/twin/brainstem/neighborhood/swarm/factory/industry/estate), these objects build the metropolis bottom-up.",
+  "the_medium": "Capability as a portable, signed, content-addressed object \u2014 the cartridge (agent.py) and the egg \u2014 that rides one wire (POST /chat, or a signed append-only event), needs no API keys or engine changes to run, and degrades gracefully offline (the Charizard hero floor). RAPP/1 frames use spec rapp/1 (\u00a77); eggs use schema rapp/1-egg and the variant field (\u00a79). The neighborhood and estate variants compose members through nested eggs, building the metropolis bottom-up.",
   "phases": [
     {
       "n": 0,
       "title": "The kernel/distro model (the Linux philosophy)",
       "horizon": "now",
-      "theme": "Name the model that already holds \u2014 a sacred versioned kernel, distros pinned on top \u2014 and make it testable.",
+      "theme": "Name the model that already holds \u2014 a sacred versioned kernel, distros pinned on top \u2014 and make it testable. Current formats: rapp/1 frames and rapp/1-egg eggs with variant.",
       "items": [
-        "\u2705 DONE 2026-06-28 \u2014 Fixed the rapp-frame schema-id collision: bumped to rapp-frame/2.0, unifying the kernel's Dream-Catcher memory-frame + the swarm wire as one kind-discriminated family (memory.*/swarm.*); sig made optional.",
+        "Use the accepted RAPP/1 frame envelope (spec rapp/1, \u00a77) and egg manifest (schema rapp/1-egg with variant, \u00a79). The June frame-collision resolution is preserved in grounding as historical evidence, not current format guidance.",
         "\u2705 CONFIRMED 2026-06-28 \u2014 No split-brain: rapp-installer is the KERNEL (the grail); RAPP is a clean DISTRO pinning kernel v0.6.0 byte-identical. Codified the Linux kernel/distro model in rapp-spine FOUNDATION \u00a72a.",
         "Make the kernel-freeze CI invariant `distro kernel files == grail @ its pinned tag` (NOT main==main); have each distro declare its pinned kernel version (a KERNEL_PIN file).",
         "Standardize the grail's tag scheme to one form `vX.Y.Z` (currently mixed: v0.6.0 vs brainstem-v0.6.1) so distros can pin cleanly.",
@@ -45,7 +46,7 @@
       "horizon": "6\u201312mo",
       "theme": "Author the missing tier the session was reaching for, in canon vocabulary.",
       "items": [
-        "Author the mesh-composition governance tier: how neighborhoods compose into estate\u2192metropolis over Issues-mailbox / PR-consent / Pages-edge / offline-degrade / UTC-first frames \u2014 on rapp-estate/1.1 + the rapp-egg/2.0 scale field (node constitutions stop at the single node today).",
+        "Author the mesh-composition governance tier: how neighborhoods compose into estate\u2192metropolis over Issues-mailbox / PR-consent / Pages-edge / offline-degrade / UTC-first rapp/1 frames \u2014 using rapp/1-egg with the neighborhood and estate variant definitions in RAPP/1 \u00a79 (node constitutions stop at the single node today).",
         "Reframe rapp-frame-net / rapp-hydra onto canon vocabulary (mechanism kept \u2014 GitHub raw + Issues + async + degrade; Mars/Agent-365 framing dropped).",
         "Activate OPTIONAL signing on the existing distribution substrate (fill reserved pubkey/sig_suite slots none\u2192ed25519); rappid eternity's keypair stays opt-in sovereignty, NEVER required."
       ]
@@ -171,6 +172,8 @@
     "Local control surfaces bind 0.0.0.0 with no auth (Organ Control Room :7077, brainstem :7071). Fine on a trusted LAN, a liability off it \u2014 gate behind Phase-1 fleet-auth before any exposure."
   ],
   "architecture": {
+    "status": "historical",
+    "note": "Preserved June 2026 implementation snapshot, not current frame/egg guidance or a claim of RAPP/1 conformance. Use format_authority for current formats.",
     "the_atom": "the brainstem (rapp-agent/1.0) \u2014 the locked kernel; everything composes from it",
     "foundation_registry": "https://raw.githubusercontent.com/kody-w/rapp-spine/main/foundation.json",
     "doctrine": "https://raw.githubusercontent.com/kody-w/rapp-spine/main/FOUNDATION.md",
@@ -212,10 +215,13 @@
       "the hydra served the same content-hash from raw.githubusercontent.com, jsDelivr, and raw.githack"
     ]
   },
-  "status": "experimental \u00b7 re-grounded 2026-06-28 against the full corpus (kody-w/rapp-map estate-map.json + neurons.json). Builds toward the metropolis; the single-file kernel stays locked.",
+  "status": "experimental \u00b7 re-grounded 2026-06-28 against the full corpus (kody-w/rapp-map estate-map.json + neurons.json); frame/egg guidance aligned 2026-09-25 to accepted RAPP/1 rev-15. Builds toward the metropolis; the single-file kernel stays locked.",
   "grounding": {
+    "status": "historical",
+    "note": "Preserved 2026-06-28 re-grounding record, not current frame/egg guidance. Its format conclusions are superseded by format_authority.",
     "re_grounded": "2026-06-28",
     "basis": "Full corpus scan: 85 rapp repos + a 630-card per-file neuron mesh (kody-w/rapp-map estate-map.json + neurons.json).",
+    "phase_0_frame_collision": "\u2705 DONE 2026-06-28 \u2014 Fixed the rapp-frame schema-id collision: bumped to rapp-frame/2.0, unifying the kernel's Dream-Catcher memory-frame + the swarm wire as one kind-discriminated family (memory.*/swarm.*); sig made optional.",
     "corrections": [
       "North star is the self-building METROPOLIS, not Agent 365 \u2014 which appears in the entire kernel canon exactly once, as a GTM line (responsible-ai/impact-assessment.md).",
       "RESOLVED 2026-06-28: rapp-frame bumped to 2.0, UNIFYING the kernel's Dream-Catcher memory-frame (ECOSYSTEM \u00a7147) and the planetary swarm wire as ONE content-addressed, hash-chained, UTC-first envelope; `kind` discriminates memory.* vs swarm.*. Every 1.0 frame is a valid 2.0 frame; no kernel edit. SPEC/agent/artifacts/foundation/registry all on 2.0.",

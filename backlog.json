@@ -580,6 +580,8 @@
     },
     {
       "title": "Content-addressing is being used as authenticity \u2014 but a hash of attacker-chosen bytes is a perfectly valid hash",
+      "scenario_status": "historical",
+      "scenario_note": "Pre-RAPP/1 evidence, not current format guidance; see roadmap.json format_authority. The scenario text is preserved.",
       "scenario": "The shipped reality is weaker than the prompt's 'HMAC now' claim: today rapp-frame/1.0 frames, rapp-egg-provenance/1.0, and rapp-rar-index/1.0 are protected by SHA-256 content addressing + prev_hash chains with NO signature on most objects (the tether's ECDSA P-256 is only used for the L4 pairing safety code; eggs 'auto-save after sha256 verify'). Content addressing proves 'these bytes hash to this address' \u2014 it does NOT prove WHO made them. An attacker who supplies BOTH the content AND the address (a malicious PR to the frame chain, a swapped manifest, a forged echo) produces a chain that verifies end-to-end: every prev_hash links, every hash matches, every egg 'verifies'. Tamper-evidence only exists relative to a trusted address the attacker doesn't control \u2014 and here they do.",
       "impact": "The entire 'verify-before-act' claim is hollow for any object that isn't signed. An edge can 'verify' a fully attacker-authored frame/echo/egg and act on it. This is the root conflation under every other crypto wrench.",
       "likelihood": "high",
@@ -1000,6 +1002,8 @@
     },
     {
       "title": "Frozen kernel vs churning upstream: Copilot auth/model deprecation, GitHub API changes, and spec-version proliferation rot the kernel from the outside \u2014 drift the lock cannot stop",
+      "scenario_status": "historical",
+      "scenario_note": "Pre-RAPP/1 evidence, not current format guidance; see roadmap.json format_authority. The scenario text is preserved.",
       "scenario": "The lock freezes the kernel's BYTES, but the kernel depends on moving external surfaces it does not control: the GitHub Copilot device-code OAuth flow and token-exchange endpoints, specific model ids (the default 'auto' picks 'the highest Claude Sonnet the account can use'), the GitHub Issues/contents/raw API shapes, and the pip/PyPI install path. All of those churn continuously \u2014 Microsoft deprecates a model id, changes the token-exchange response, tightens an API, retires an OAuth scope \u2014 and a FROZEN kernel cannot adapt by definition. Meanwhile the spec ecosystem proliferates versions (rapp-frame/1.0, rapp-moment/1.0, rapp-static-api/1.0, rappid forms...) and old canonical twins for superseded specs go stale while edges still reference them. This is 'ecosystem drift despite the lock': the lock holds the kernel still while the ground moves, guaranteeing a future day the byte-identical-to-grail kernel simply stops authenticating or stops parsing a response.",
       "impact": "Silent, scheduled-by-someone-else death of Tier 1: the day GitHub deprecates the model or changes the auth response, every frozen edge loses its brain or its login at once, and the no-engine-edit rule forbids the adaptation. Spec-version sprawl means edges and twins disagree about which canonical hash is authoritative for which spec version, reintroducing drift the content-addressing was supposed to eliminate. The lock converts normal upstream churn into correlated, unpatchable outages.",
       "likelihood": "high",
