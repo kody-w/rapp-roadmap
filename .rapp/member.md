@@ -7,7 +7,9 @@ what: 🗺️ The RAPP roadmap: one laptop brainstem -> a planetary swarm of gov
 line: learn
 links:
   - RAPP
+  - rapp-1
   - rapp-map
+  - rapp-monorepo
   - rapp-spine
 ---
 
@@ -16,7 +18,7 @@ links:
 🗺️ The RAPP roadmap: one laptop brainstem -> a planetary swarm of governed Leviathans enhancing every Agent 365 workflow. Enhance, never replace; kernel stays sacred.
 
 - Line: **Learn & Docs**, on the [RAPP/1 subway map](https://kody-w.github.io/rapp-hive-public/portfolio/subway.html).
-- Neighbors: [RAPP](https://github.com/kody-w/RAPP), [rapp-map](https://github.com/kody-w/rapp-map), [rapp-spine](https://github.com/kody-w/rapp-spine).
+- Neighbors: [RAPP](https://github.com/kody-w/RAPP), [rapp-1](https://github.com/kody-w/rapp-1), [rapp-map](https://github.com/kody-w/rapp-map), [rapp-monorepo](https://github.com/kody-w/rapp-monorepo), [rapp-spine](https://github.com/kody-w/rapp-spine).
 - New to RAPP? [Start here: get your Brainstem](https://github.com/kody-w/rapp-installer#start-here).
 
 This is this repo's card in the RAPP Hive. Change it with an ordinary commit here; the Hive reads it at this
