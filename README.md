@@ -1,5 +1,9 @@
 # 🗺️ The RAPP Roadmap
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/rapp-roadmap.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/rapp-roadmap.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 **Use everyone else's hardware to run the network → operators run brainstems, subscribe to neighborhoods, and those estates mesh into a self-building metropolis — while the single-file kernel never changes.**
 
 > **Re-grounded 2026-06-28** against a full corpus scan — all 85 rapp repos + a 630-card per-file neuron mesh ([kody-w/rapp-map](https://github.com/kody-w/rapp-map)). The prior version drifted toward *"a planetary swarm enhancing Agent 365"* as the destination; this one re-anchors on [MASTER_PLAN](https://github.com/kody-w/RAPP/blob/main/MASTER_PLAN.md)'s actual north star.
