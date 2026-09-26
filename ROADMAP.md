@@ -1,6 +1,8 @@
 # The RAPP Roadmap
 
-> ⚠️ **RE-GROUNDED 2026-06-28.** This long-form was written before a full corpus scan (85 repos + a 630-card neuron mesh, [kody-w/rapp-map](https://github.com/kody-w/rapp-map)) caught recency bias. The **current grounded source of truth is [README.md](README.md) + [`roadmap.json`](roadmap.json)**, which re-anchor on MASTER_PLAN's real north star (*"use everyone else's hardware → the self-building metropolis"*), demote Agent 365 to an optional T3 lane, fix the `rapp-frame/1.0` collision, route the fleet over `/chat` (Art XXV), and keep PKI out except rappid eternity's optional keypair. Sections below that frame Agent 365 as the destination or `/api/agent` as the wire are superseded.
+> ⚠️ **RE-GROUNDED 2026-06-28.** This long-form was written before a full corpus scan (85 repos + a 630-card neuron mesh, [kody-w/rapp-map](https://github.com/kody-w/rapp-map)) caught recency bias. The **current grounded source of truth is [README.md](README.md) + [`roadmap.json`](roadmap.json)**, which re-anchor on MASTER_PLAN's real north star (*"use everyone else's hardware → the self-building metropolis"*), demote Agent 365 to an optional T3 lane, record the historical frame-id collision, route the fleet over `/chat` (Art XXV), and keep PKI out except rappid eternity's optional keypair. Sections below that frame Agent 365 as the destination or `/api/agent` as the wire are superseded.
+
+> **Current frame/egg guidance (2026-09-25):** accepted [RAPP/1 rev-15](https://github.com/kody-w/rapp-1/blob/eb50008011447f5e69372ac22a1755f0978d15ed/SPEC.md) §7 uses frame `spec: "rapp/1"`; §9 uses egg `schema: "rapp/1-egg"` with `variant`, including the nested `neighborhood` and `estate` variants. The historical architecture snapshot below is evidence of earlier work, not current format guidance or proof of RAPP/1 conformance.
 
 > **North star** — *Use everyone else's hardware to run the network* (MASTER_PLAN §5): operators run brainstems on their own machines, subscribe to many neighborhoods (the union = their estate), and estates mesh into a self-building metropolis — while the sacred single-file kernel never changes. Agent 365 is an optional Tier-3 commercial on-ramp, not the destination.
 
@@ -188,7 +190,9 @@ The new medium is capability itself made into a portable, signed, content-addres
 
 *One brainstem on a laptop → a planetary swarm of Leviathans enhancing every Agent 365 workflow. The kernel never changes; the capability rides one wire.*
 
-## The architecture, locked (and proven live)
+## Historical architecture snapshot (June 2026)
+
+The following record is preserved as written. Its format identifiers and "live" claims describe that earlier snapshot, not current frame/egg guidance; use the accepted RAPP/1 authority above.
 
 The brainstem is the **atom**; the kernel is **locked**; every spec has a globally-public **canonical twin** (content-addressed in [`foundation.json`](https://github.com/kody-w/rapp-spine/blob/main/foundation.json)); and the whole medium rides the **hydra** (many heads, unkillable). The pillars:
 
